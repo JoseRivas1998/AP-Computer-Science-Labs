@@ -25,7 +25,7 @@ public class Searching {
      * Postcondition: Return value is the index of the given string, or -1 if it was not found
      */
     private static int findString(String[] strings, String s, int low, int high) {
-        // TODO 2.1 Implement a ternary search, this is a recursive method.
+        // TODO 2.2 Implement a ternary search, this is a recursive method.
         // THIS IS A STUB
         return 0;
     }
