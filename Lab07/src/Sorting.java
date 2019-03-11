@@ -1,5 +1,6 @@
 import java.io.File;
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * @author [YOUR NAME HERE]
@@ -18,6 +19,10 @@ public class Sorting {
 
     private void sortStudentsByLastName(Student[] students) {
         // TODO 1.2 Sort students by their last name.
+    }
+
+    private void sortStudents(Student[] students, Comparator<Student> comparator) {
+        // TODO 1.3 RESEARCH PORTION: Research comparators and use the given comparator to sort students by anything
     }
 
     // Here is code for an insertion sort, you may use this as a template if you would like above.
@@ -63,13 +68,25 @@ public class Sorting {
         System.out.println("Strings after sorting: " + Arrays.toString(strings));
         System.out.println();
         Student[] students = Student.readStudentsFromFile(new File("students.txt"));
-        System.out.println("Students before sorting: ");
+        System.out.println("Students before sorting by last name: ");
         for (Student student : students) {
             System.out.println(student);
         }
         System.out.println();
         sorting.sortStudentsByLastName(students);
-        System.out.println("Students after sorting: ");
+        System.out.println("Students after sorting by last name: ");
+        for (Student student : students) {
+            System.out.println(student);
+        }
+        students = Student.readStudentsFromFile(new File("students.txt"));
+        System.out.println();
+        System.out.println("Students before sorting by first name: ");
+        for (Student student : students) {
+            System.out.println(student);
+        }
+        System.out.println();
+        sorting.sortStudents(students, (o1, o2) -> o1.getFirstName().compareToIgnoreCase(o2.getFirstName()));
+        System.out.println("Students after sorting by first name: ");
         for (Student student : students) {
             System.out.println(student);
         }
